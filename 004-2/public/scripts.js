@@ -1,12 +1,12 @@
-window.addEventListener("load", function (){
-	refreshListeners();	
-});
+// window.addEventListener("load", function (){
+// 	refreshListeners();	
+// });
 
 function refreshListeners() {
 	commentInfos = document.getElementsByClassName("comment__info");
 	for(i = 0; i < commentInfos.length; i++) {
 		commentInfos[i].childNodes[1].addEventListener("click", likeClicked);
-		commentInfos[i].childNodes[3].addEventListener("click", replyLinkClicked)
+		commentInfos[i].childNodes[3].addEventListener("click", replyLinkClicked);
 	}
 
 	mediaInfos = document.getElementsByClassName("media__info")
@@ -73,6 +73,7 @@ function modalBackgroundClicked(e) {
 }
 
 function replyLinkClicked(e) {
+	debugger;
 	//toggle visibility of reply area
 	if (this.parentNode.parentNode.childNodes[5] != null) {
 		if (this.parentNode.parentNode.childNodes[5].style.display == "none") {
