@@ -16,12 +16,6 @@ function handleCommentsLoad(e) {
 	insertComments(comments);
 }
 
-// function insertComments(comments) {
-// 	var comments_HTML = buildCommentsHTML(comments);
-// 	comments_area = document.getElementsByClassName("post__comments")[0];
-// 	comments_area.innerHTML = comments_HTML;
-// }
-
 function insertComments(comments) {
 	var post_info_div = document.getElementsByClassName("post__info")[0];
 	var comments_div = document.createElement("div");
@@ -37,28 +31,6 @@ function insertComments(comments) {
 function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
-
-// function buildCommentsHTML(comments) {
-// 	var comments_HTML = "";
-// 	for(i=0; i<comments.length; i++) {
-// 		comments_HTML +=" <div class=\"comment media\"> ";
-// 		comments_HTML += buildCommentHTML(comments[i]);
-// 		comments_HTML +=" </div> ";
-// 	}
-// 	return comments_HTML;
-// }
-
-// function buildCommentHTML(comment) {
-//  	var comment_HTML = " <img src = \"" + comment["profile_img"] + "\" class=\"profilePhoto\"> ";
-//  	comment_HTML += " <div class=\"media__info\"> "; 
-//  	comment_HTML += "  <a href=\"#\">" + comment["name"] + "</a> ";
-//  	comment_HTML += comment["body"];
-//  	comment_HTML += buildCommentInfoHTML(comment);
-//  	comment_HTML += buildRepliesHTML(comment);
-//  	comment_HTML += " </div> ";
-
-// 	return comment_HTML;
-// }
 
 function buildCommentNode(comment) {
 	var comment_media_div = document.createElement("div");
@@ -96,15 +68,6 @@ function buildCommentInfoNode(comment) {
  	comment_info_div.innerHTML = comment_info_HTML;
  	return comment_info_div;
 }
-
-// function buildRepliesHTML(comment) {
-// 	var replies_HTML = " <div class=\"replies\" style=\"display: none\"> ";
-// 	if(comment["replys_comments"] != null) {
-// 		replies_HTML += buildCommentsHTML(comment["replys_comments"]);
-// 	}
-// 	replies_HTML += " </div> "
-// 	return replies_HTML;
-// }
 
 function buildRepliesNode(comment) {
 	var replies_div = document.createElement("div");
